@@ -1,6 +1,6 @@
 
 
-<body bgcolor="#000" style="margin:0;padding:0;height:calc(100vh+1px);position:relative;">
+<body bgcolor="#000" style="margin:0;padding:0;height:100vh;">
 
      <marquee style="color:pink;font-size:110px;font-family:cursive;margin:1em 0;">✨ Nuri pup fan site ✨</marquee>
      
@@ -42,8 +42,8 @@
                let touches = e.changedTouches
                for (let i = 0; i < touches.length; i++) {
                let touch = touches[i]
-               let x = touch.screenX
-               let y = touch.screenY
+               let x = touch.clientX
+               let y = touch.clientY
                let star = document.createTextNode("\uD83C\uDF1F")
                let elem = document.createElement("div")
                let elem2 = document.createElement("div")
