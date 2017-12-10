@@ -10,18 +10,20 @@
      
      <style>
           .star{
-               animation-duration: 0.5s;
+               animation-duration: 0.75s;
                animation-name: star;
                position: absolute;
-               color:red;
+               font-size: 20px;
           }
           
           @keyframes star {
                from {
                     opacity: 1;
+                    transform: rotate(0);
                }
                to {
                     opacity: 0;
+                    transform: translatey(70px) rotate(300deg);
                }
           }
      </style>
