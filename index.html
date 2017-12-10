@@ -33,11 +33,11 @@
           window.addEventListener("touchmove", touchmove)
           
           function touchmove(e) {
-               //e.preventDefault()
+               e.preventDefault()
                let touch = e.touches[0]
                let x = touch.clientX
                let y = touch.clientY
-               let star = document.createTextNode("\uD83C\uDF1F"+x+","+y)
+               let star = document.createTextNode("\uD83C\uDF1F")
                let elem = document.createElement("div")
                elem.appendChild(star)
                elem.className = "star"
