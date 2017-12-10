@@ -9,11 +9,14 @@
      style="user-select:none;" />
      
      <style>
-          .star{
-               animation-duration: 1s;
-               animation-name: star;
+          .star {
                position: absolute;
                font-size: 60px;
+          }
+          
+          .star > div {
+               animation-duration: 1s;
+               animation-name: star;
           }
           
           @keyframes star {
@@ -43,9 +46,11 @@
                let y = touch.clientY
                let star = document.createTextNode("\uD83C\uDF1F")
                let elem = document.createElement("div")
-               elem.appendChild(star)
+               let elem2 = document.createElement("div")
+               elem2.appendChild(star)
+               elem.appendChild(elem2)
                elem.className = "star"
-               elem.style = "left:"+x+"px;top:"+y+"px;"
+               elem.style = "left:"+x+"px;top:"+y+"px;transform:rotate("+Math.random()+"turn);"
                document.body.appendChild(elem)
                }
           }
@@ -53,7 +58,7 @@
           window.addEventListener("animationend", animationend)
           
           function animationend(e) {
-               document.body.removeChild(e.target)
+               document.body.removeChild(e.target.parentElement)
           }
           
           
