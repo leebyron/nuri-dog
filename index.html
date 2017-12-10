@@ -6,3 +6,43 @@
      
      <img src="24AEF7D8-1E2D-42B7-98D5-DB91E783D0A4.jpeg"
      width="100%">
+     
+     <style>
+          .star{
+               animation-duration: 0.5s;
+               animation-name: star;
+          }
+          
+          @keyframes star {
+               from {
+                    opacity: 1;
+               }
+               to {
+                    opacity: 0;
+               }
+          }
+     </style>
+
+     <script>
+          
+          window.addEventListener("touchmove", touchmove)
+          
+          function touchmove(e) {
+               let touch = e.changedTouches[0]
+               let x = touch.clientX
+               let y = touch.clientY
+               let star = document.createTextNode("\uD83C\uDF1F")
+               let elem = document.createElement("div")
+               elem.appendChild(star)
+               elem.className = "star"
+               document.body.appendChild(elem)
+          }
+          
+          window.addEventListener("animationend", animationend)
+          
+          function animationend(e) {
+               document.body.removeChild(e.target)
+          }
+          
+          
+      </style>
