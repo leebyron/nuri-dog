@@ -13,6 +13,7 @@
                animation-duration: 0.5s;
                animation-name: star;
                position: absolute;
+               color:red;
           }
           
           @keyframes star {
@@ -36,7 +37,7 @@
                let touch = e.touches[0]
                let x = touch.clientX
                let y = touch.clientY
-               let star = document.createTextNode("\uD83C\uDF1F")
+               let star = document.createTextNode("\uD83C\uDF1F"+x+","+y)
                star.style = "left:"+x+"px;top:"+y+"px;"
                let elem = document.createElement("div")
                elem.appendChild(star)
