@@ -28,6 +28,7 @@
           window.addEventListener("touchmove", touchmove)
           
           function touchmove(e) {
+               e.preventDefault()
                let touch = e.changedTouches[0]
                let x = touch.clientX
                let y = touch.clientY
