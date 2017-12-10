@@ -10,7 +10,7 @@
      
      <style>
           .star {
-               position: absolute;
+               position: fixed;
                font-size: 60px;
           }
           
@@ -42,8 +42,8 @@
                let touches = e.changedTouches
                for (let i = 0; i < touches.length; i++) {
                let touch = touches[i]
-               let x = touch.clientX
-               let y = touch.clientY
+               let x = touch.screenX
+               let y = touch.screenY
                let star = document.createTextNode("\uD83C\uDF1F")
                let elem = document.createElement("div")
                let elem2 = document.createElement("div")
