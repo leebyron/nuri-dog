@@ -23,7 +23,7 @@
                }
                to {
                     opacity: 0;
-                    transform: rotate(2.5turn) translatey(110px);
+                    transform: translate(0,160px) rotate(2.5turn);
                }
           }
      </style>
@@ -36,7 +36,8 @@
           
           function touchmove(e) {
                e.preventDefault()
-               let touch = e.touches[0]
+               e.changedTouches.forEach(touch => {
+               //let touch = e.touches[0]
                let x = touch.clientX
                let y = touch.clientY
                let star = document.createTextNode("\uD83C\uDF1F")
@@ -45,6 +46,7 @@
                elem.className = "star"
                elem.style = "left:"+x+"px;top:"+y+"px;"
                document.body.appendChild(elem)
+               })
           }
           
           window.addEventListener("animationend", animationend)
